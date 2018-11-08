@@ -8,37 +8,9 @@
 package creatingmethods;
 
 import java.util.Scanner;
-
+import java.util.Random;
 
 public class CreatingMethods {
-
-    public static void rng(int n1,int n2) {
-        // TODO code application logic here
-    }
-    
-    public static void squr(int n1,int n2) {
-        // TODO code application logic here
-    }
-    public static void theorem(int n1,int n2) {
-        // TODO code application logic here
-    }
-    
-    public static void power(int n1,int n2) {
-        double total = 0;
-        
-        total = Math.pow(n1,n2);
-        System.out.println(total);
-    }
-    
-    public static void average(int n1,int n2,int n3,int n4) {
-        double total;
-        
-        total = n1 + n2 + n3 + n4;
-        
-        total = total / 4;
-        
-        System.out.println("The average is: " + Math.round(total));
-    }
     
     public static void main(String[] args) {
         //Creating Scanner
@@ -91,13 +63,34 @@ public class CreatingMethods {
                 average(num1,num2,num3,num4);
             }
             else if (menu == 3){
+                System.out.println("You will be prompted to imput two side lengths in cm."
+                        + "remeber it has to be a right side triangle");
+                System.out.println("Enter the first side length in cm");
+                num1 = keyedInput.nextInt();
+                System.out.println("Enter the second side length in cm");
+                num2 = keyedInput.nextInt();
                 
+                theorem(num1,num2);
             }
             else if (menu == 4){
+                System.out.println("Enter one number that you would like the square root of. \n"
+                + "Note the number must be above 0");
+                num1 = keyedInput.nextInt();
                 
+                while (menu == 4){
+                    if (num1 > 0){
+                        menu = 10;
+                        sqrt(num1);
+                    
+                    }
+                    else{
+                        System.out.println("Enter a number above 0");
+                        num1 = keyedInput.nextInt();
+                    }
+                }
             }
             else if (menu == 5){
-                
+                rng();
             }
             else if (menu == 6){
                 play = 0;
@@ -106,6 +99,53 @@ public class CreatingMethods {
                 System.out.println("Enter a useable value");
             }
         }
+    }
+    
+    public static void rng() {
+        int total = 0;
+        
+        total = (int)Math.round(Math.random()*11+1);
+        
+        System.out.println("Your ranom number is " + total);
+    }
+    
+    public static void sqrt(int n1) {
+        double total;
+        
+        
+        total = Math.sqrt(n1);
+        Math.round(total);
+        
+        System.out.println("The total is: " + Math.round(total));
+    }
+    public static void theorem(int n1,int n2) {
+        double total = 0;
+                
+        n1 = n1*n1;
+        n2 = n2*n2;
+        
+        total = n1 + n2;
+        total = Math.sqrt(total);
+        
+        System.out.println("The total of the third side is: " + Math.round(total) + "cm");
+        
+    }
+    
+    public static void power(int n1,int n2) {
+        double total = 0;
+        
+        total = Math.pow(n1,n2);
+        System.out.println(total);
+    }
+    
+    public static void average(int n1,int n2,int n3,int n4) {
+        double total;
+        
+        total = n1 + n2 + n3 + n4;
+        
+        total = total / 4;
+        
+        System.out.println("The average is: " + Math.round(total));
     }
     
 }
