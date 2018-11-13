@@ -10,6 +10,9 @@ package creatingmethods;
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+ * Allows user to have 5 mathematical calculations
+ */
 public class CreatingMethods {
     
     public static void main(String[] args) {
@@ -101,6 +104,9 @@ public class CreatingMethods {
         }
     }
     
+    /**
+     * Creates a random number
+     */
     public static void rng() {
         int total = 0;
         
@@ -109,15 +115,21 @@ public class CreatingMethods {
         System.out.println("Your ranom number is " + total);
     }
     
+    /**
+     * Squareroots a number 
+     */
     public static void sqrt(int n1) {
         double total;
-        
         
         total = Math.sqrt(n1);
         Math.round(total);
         
         System.out.println("The total is: " + Math.round(total));
     }
+    
+    /**
+     * Calculates pythagorean theorem
+     */
     public static void theorem(int n1,int n2) {
         double total = 0;
                 
@@ -131,6 +143,9 @@ public class CreatingMethods {
         
     }
     
+    /**
+     * Calculates number to the power of another number
+     */
     public static void power(int n1,int n2) {
         double total = 0;
         
@@ -138,6 +153,9 @@ public class CreatingMethods {
         System.out.println(total);
     }
     
+    /**
+     * Finds average of 4 numbers
+     */
     public static void average(int n1,int n2,int n3,int n4) {
         double total;
         
